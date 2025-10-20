@@ -1,0 +1,110 @@
+Зайти в домашнюю директорию через терминал.
+
+Создать папку test 3
+julia@DESKTOP-C2VS8PD MINGW64 ~/BASH_TRAINING
+$ mkdir test3
+
+Добавить в папку test 3 три файла 4, 5 и 6, в каждом из которых должно быть по 4 строки row1, row2, row3, row4
+julia@DESKTOP-C2VS8PD MINGW64 ~/BASH_TRAINING
+$ cd test3
+
+julia@DESKTOP-C2VS8PD MINGW64 ~/BASH_TRAINING/test3
+$ touch 4.txt
+
+julia@DESKTOP-C2VS8PD MINGW64 ~/BASH_TRAINING/test3
+$ touch 5.txt
+
+julia@DESKTOP-C2VS8PD MINGW64 ~/BASH_TRAINING/test3
+$ touch 6.txt
+
+julia@DESKTOP-C2VS8PD MINGW64 ~/BASH_TRAINING/test3
+$ echo row1 > 4.txt
+
+julia@DESKTOP-C2VS8PD MINGW64 ~/BASH_TRAINING/test3
+$ echo row2 >> 4.txt
+
+julia@DESKTOP-C2VS8PD MINGW64 ~/BASH_TRAINING/test3
+$ echo row3 >> 4.txt
+
+julia@DESKTOP-C2VS8PD MINGW64 ~/BASH_TRAINING/test3
+$ echo row4 >> 4.txt
+
+julia@DESKTOP-C2VS8PD MINGW64 ~/BASH_TRAINING/test3
+$ echo row1 > 5.txt
+
+julia@DESKTOP-C2VS8PD MINGW64 ~/BASH_TRAINING/test3
+$ echo row2 >> 5.txt
+
+julia@DESKTOP-C2VS8PD MINGW64 ~/BASH_TRAINING/test3
+$ echo row3 >> 5.txt
+
+julia@DESKTOP-C2VS8PD MINGW64 ~/BASH_TRAINING/test3
+$ echo row4 >> 5.txt
+
+julia@DESKTOP-C2VS8PD MINGW64 ~/BASH_TRAINING/test3
+$ echo row1 > 6.txt
+
+julia@DESKTOP-C2VS8PD MINGW64 ~/BASH_TRAINING/test3
+$ echo row2 >> 6.txt
+
+julia@DESKTOP-C2VS8PD MINGW64 ~/BASH_TRAINING/test3
+$ echo row3 >> 6.txt
+
+julia@DESKTOP-C2VS8PD MINGW64 ~/BASH_TRAINING/test3
+$ echo row4 >> 6.txt
+
+Найдите строку row2 в файле 5
+julia@DESKTOP-C2VS8PD MINGW64 ~/BASH_TRAINING/test3
+$ grep "row2" 5.txt
+row2
+
+Найдите строку row в папке test3
+$ grep -R "row" .
+
+Посчитайте сколько строк с содержимым row в файле 6
+$ grep -c "row" 6.txt
+
+Найдите файл 5 внутри папки test3
+julia@DESKTOP-C2VS8PD MINGW64 ~/BASH_TRAINING/test3
+$ find . -name "5.txt"
+
+Используя команду find, удалите файл 5
+julia@DESKTOP-C2VS8PD MINGW64 ~/BASH_TRAINING/test3
+$ find . -name "5.txt" -delete
+
+Используя команду echo, добавьте слово test в файл 4
+julia@DESKTOP-C2VS8PD MINGW64 ~/BASH_TRAINING/test3
+$ echo test >> 4.txt
+
+Замените слово test в файле 4 на fail
+julia@DESKTOP-C2VS8PD MINGW64 ~/BASH_TRAINING/test3
+$ sed -i 's/test/fail/g' 4.txt
+
+Добавьте в файл 4 слово test так, чтобы сохранилось содержимое
+
+Просмотрите все процессы для юзеров не только в консоли, которые происходят в системе
+julia@DESKTOP-C2VS8PD MINGW64 ~/BASH_TRAINING/test3
+$ ps aux
+      PID    PPID    PGID     WINPID   TTY         UID    STIME COMMAND
+      332       1     332       8176  cons0     197609 18:56:22 /usr/bin/bash
+      736     332     736       3440  cons0     197609 19:40:43 /usr/bin/ps
+
+Убейте любой неважный процесс в консоли. Если боитесь удалить что-то лишнее, то можете просто прислать сам запрос без его запуска.
+julia@DESKTOP-C2VS8PD MINGW64 ~/BASH_TRAINING/test3
+$ kill PID
+
+Узнайте доступность ресурса rusau.net, используя ping
+julia@DESKTOP-C2VS8PD MINGW64 ~/BASH_TRAINING/test3
+$ ping rusau.net
+
+Отправьте 5 пакетов на сайт rusau.net
+julia@DESKTOP-C2VS8PD MINGW64 ~/BASH_TRAINING/test3
+$ ping -c 5 rusau.net
+
+Используя GET и команду curl, получите информацию о зарегистрированных питомцах с любым статусом на https://petstore.swagger.io/
+julia@DESKTOP-C2VS8PD MINGW64 ~/BASH_TRAINING/test3
+$ curl https://petstore.swagger.io/pet/findByStatus
+
+Используя POST и команду curl, создайте нового пользователя на https://petstore.swagger.io/
+julia@DESKTOP-C2VS8PD MINGW64 ~/BASH_TRAINING/test3
+$ curl -X POST https://petstore.swagger.io/user --data "username=doge" --data "password=123"
