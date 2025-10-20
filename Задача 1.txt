@@ -1,0 +1,131 @@
+Открыть домашнюю директорию через терминал
+
+Определить имя папки, в которой вы находитесь
+julia@DESKTOP-C2VS8PD MINGW64 ~/BASH_TRAINING
+$ pwd
+/c/Users/julia/BASH_TRAINING
+
+Создать внутри этой папки каталог с именем test1
+julia@DESKTOP-C2VS8PD MINGW64 ~/BASH_TRAINING
+$ mkdir test1
+
+Перейти в папку test1
+julia@DESKTOP-C2VS8PD MINGW64 ~/BASH_TRAINING
+$ cd  test1
+
+Создать файл 1,2 и 3 внутри каталога test1
+julia@DESKTOP-C2VS8PD MINGW64 ~/BASH_TRAINING/test1
+$ touch 1.txt
+
+julia@DESKTOP-C2VS8PD MINGW64 ~/BASH_TRAINING/test1
+$ touch 2.txt
+
+julia@DESKTOP-C2VS8PD MINGW64 ~/BASH_TRAINING/test1
+$ touch 3.txt
+
+Проверить содержимое каталога test1
+julia@DESKTOP-C2VS8PD MINGW64 ~/BASH_TRAINING/test1
+$ ls
+1.txt  2.txt  3.txt
+
+Перейти в домашнюю директорию
+julia@DESKTOP-C2VS8PD MINGW64 ~/BASH_TRAINING/test1
+$ cd  BASH_TRAINING
+
+Создать папку test2 внутри домашней директории
+julia@DESKTOP-C2VS8PD MINGW64 ~/BASH_TRAINING
+$ mkdir test2
+
+Удалить папку test2
+julia@DESKTOP-C2VS8PD MINGW64 ~/BASH_TRAINING
+$ rm -r test2
+
+Удалить файл 2 из папки test1
+julia@DESKTOP-C2VS8PD MINGW64 ~/BASH_TRAINING
+$ cd test1
+
+julia@DESKTOP-C2VS8PD MINGW64 ~/BASH_TRAINING/test1
+$ rm 2.txt
+
+Создать папку в домашней директории test3 и добавить в нее два файла
+julia@DESKTOP-C2VS8PD MINGW64 ~/BASH_TRAINING/test1
+$ cd ..
+
+julia@DESKTOP-C2VS8PD MINGW64 ~/BASH_TRAINING
+$ mkdir test3 
+
+julia@DESKTOP-C2VS8PD MINGW64 ~/BASH_TRAINING
+$ cd test3
+
+julia@DESKTOP-C2VS8PD MINGW64 ~/BASH_TRAINING/test3
+$ touch 11.txt
+
+julia@DESKTOP-C2VS8PD MINGW64 ~/BASH_TRAINING/test3
+$ touch 22.txt
+
+Удалить папку test3
+julia@DESKTOP-C2VS8PD MINGW64 ~/BASH_TRAINING/test3
+$ cd ..
+
+julia@DESKTOP-C2VS8PD MINGW64 ~/BASH_TRAINING
+$ rm -r test3
+
+Создать папку test4 в домашней директории
+julia@DESKTOP-C2VS8PD MINGW64 ~/BASH_TRAINING
+$ mkdir test4
+
+Переместить файлы 1 и 3 из папки test1 в папку test4
+julia@DESKTOP-C2VS8PD MINGW64 ~/BASH_TRAINING
+$ mv test1/1.txt test4
+
+julia@DESKTOP-C2VS8PD MINGW64 ~/BASH_TRAINING
+$ mv test1/3.txt test4
+
+Добавить в файл 1 три строки со словами line
+julia@DESKTOP-C2VS8PD MINGW64 ~/BASH_TRAINING/test4
+$ echo line > 1.txt
+
+julia@DESKTOP-C2VS8PD MINGW64 ~/BASH_TRAINING/test4
+$ echo line >> 1.txt
+
+julia@DESKTOP-C2VS8PD MINGW64 ~/BASH_TRAINING/test4
+$ echo line >> 1.txt
+
+Посмотреть содержимое файла 1
+julia@DESKTOP-C2VS8PD MINGW64 ~/BASH_TRAINING/test4
+$ cat 1.txt
+line
+line
+line
+
+Добавьте в файл 3 три строки со словами line
+julia@DESKTOP-C2VS8PD MINGW64 ~/BASH_TRAINING/test4
+$ cat 3.txt
+line
+
+julia@DESKTOP-C2VS8PD MINGW64 ~/BASH_TRAINING/test4
+$ echo line >> 3.txt
+
+julia@DESKTOP-C2VS8PD MINGW64 ~/BASH_TRAINING/test4
+$ echo line >> 3.txt
+
+Просмотрите содержимое двух файлов (1 и 3) сразу
+julia@DESKTOP-C2VS8PD MINGW64 ~/BASH_TRAINING/test4
+$ cat 1.txt 3.txt
+line
+line
+line
+line
+line
+line
+
+Используя один из редакторов замените все строки в файле 1
+julia@DESKTOP-C2VS8PD MINGW64 ~/BASH_TRAINING/test4
+$ nano 1.txt
+
+julia@DESKTOP-C2VS8PD MINGW64 ~/BASH_TRAINING/test4
+$ cat 1.txt
+null
+null
+null
+
